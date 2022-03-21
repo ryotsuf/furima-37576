@@ -38,10 +38,10 @@
 
 ## Buy_logテーブル
 
-| Column          | Type    | Options                            |
-| --------------- | ------- | ----------------------------
-| user | references | null: false, foreign_key: true |
-| item | references | null: false, foreign_key: true |
+| Column          | Type       | Options                        |
+| --------------- | ---------- | ------------------------------ |
+| user            | references | null: false, foreign_key: true |
+| item            | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -51,14 +51,14 @@
 
 ## Addressesテーブル
 
-| Column          | Type    | Options                            |
-| ----------------|---------|------------------------------------|
-| postcode | string | null: false |
-| region | string | null: false |
-| city | string | null: false |
-| street_address | string | null: false |
-| building_name | string | null: false |
-| phone_number | string | null: false |
+| Column          | Type    | Options    |
+| ----------------|-------- |------------|
+| postcode        | string | null: false |
+| region          | string | null: false |
+| city            | string | null: false |
+| street_address  | string | null: false |
+| building_name   | string | null: false |
+| phone_number    | string | null: false |
 
 ### Association
 
