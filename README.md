@@ -4,7 +4,6 @@
 | -------------------|---------|---------------------------|
 | nickname           | string  | null: false               |
 | email              | string  | null: false, unique: true |
-| password           | string  | null: false               |
 | encrypted_password | string  | null: false               |
 | birthday           | date    | null: false               |
 | last_name          | string  | null: false               |
@@ -27,7 +26,7 @@
 | condition_id       | integer     | null: false                        |
 | delivery_fee_id    | integer     | null: false                        |
 | region_delivery_id | integer     | null: false                        |
-| days_to deliver_id | integer     | null: false                        |
+| days_to_deliver_id | integer     | null: false                        |
 | price              | integer     | null: false                        |
 | user               | references  | null: false, foreign_key: true     |
 
