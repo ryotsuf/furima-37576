@@ -7,8 +7,6 @@ class User < ApplicationRecord
   
   with_options presence: true  do
     
-    validates :nickname
-    validates :email
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i, message: "is invalid. Input half-width characters." }
     validates :encrypted_password
     validates :birthday
