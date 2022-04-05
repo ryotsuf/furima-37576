@@ -60,6 +60,13 @@ RSpec.describe User, type: :model do
         @user.valid?
         expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
       end
+
+      it "passwordは全角文字を含む場合は登録できない" do
+        @user.password = 'きき木キキキ'
+        @user.password_confirmation = 'きき木キキキ'
+        @user.valid?
+        expect(@user.errors.full_messages).to include('Password is invalid. Input half-width characters.')
+      end
       it "passwordとpassword_confirmationは値が一致していないと登録できない" do
         @user.password = '111aaa'
         @user.password_confirmation = '111aab'
@@ -120,4 +127,3 @@ RSpec.describe User, type: :model do
     end
   end
 end
-
