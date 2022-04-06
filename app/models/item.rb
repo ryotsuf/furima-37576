@@ -13,8 +13,8 @@ class Item < ApplicationRecord
   
   with_options presence: true do
 
-    validates :name
-    validates :explanation
+    validates :name, length: {maximum: 40}
+    validates :explanation, length: {maximum: 1000}
     validates :image
 
     with_options numericality: { other_than: 1 , message: "can't be blank" } do
@@ -24,7 +24,7 @@ class Item < ApplicationRecord
       validates :region_delivery_id
       validates :days_to_deliver_id
     end
-    
+
     validates :price, numericality: {only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999, message: "is invalid"}
   end
 
