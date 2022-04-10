@@ -128,7 +128,7 @@
     </div>
     <ul class='item-lists'>
       <%# 出品されている場合、一覧を表示 %>
-<% if @items.present?%>
+      <% if @items.present?%>
       <% @items.each do |item| %>
       <li class='list'>
           <%= link_to "item_path" do %>
@@ -160,7 +160,7 @@
       </li>
       <% end %>
         
-
+    <%# 出品がない場合、ダミーを表示 %>
     <% else %> 
           <li class='list'>
             <%= link_to '#' do %>
@@ -178,23 +178,10 @@
               </div>
             </div>
              <% end %>
-          </li>
-        
-        
-      
-      
-
-      
-
-      
-      <%# 出品がない場合、ダミーを表示 %>
+          </li>       
     <% end %>
-
-      <%# 出品がない場合、ダミーを表示 %>
-    <%# <% end %> 
-     
-    </ul>
-  
+    <%# 出品がない場合、ダミーを表示 %> 
+    </ul> 
   </div>
   <%# /商品一覧 %>
 </div>
