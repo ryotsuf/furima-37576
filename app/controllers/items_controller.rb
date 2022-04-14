@@ -28,6 +28,9 @@ class ItemsController < ApplicationController
     unless current_user.id == @item.user_id
       redirect_to root_path
     end
+    sold_item
+
+
   end
 
   def update
@@ -50,6 +53,10 @@ class ItemsController < ApplicationController
 
   def find_item
     @item = Item.find(params[:id])
+  end
+
+  def sold_item
+    
   end
 
 end
