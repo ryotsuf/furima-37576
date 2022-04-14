@@ -30,7 +30,6 @@ class ItemsController < ApplicationController
     end
     sold_item
 
-
   end
 
   def update
@@ -56,7 +55,9 @@ class ItemsController < ApplicationController
   end
 
   def sold_item
-    
+    if @item.buy_log.present?
+      redirect_to root_path
+    end
   end
 
 end
