@@ -1,9 +1,10 @@
 class BuyLogsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_item, only: [:index, :create]
 
   
   def index
-    @item = Item.find(params[:item_id])
+    
     @buy_log_address = BuyLogAddress.new
     if @item.user_id == current_user.id
       redirect_to root_path
@@ -14,7 +15,7 @@ class BuyLogsController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
+    
     @buy_log_address = BuyLogAddress.new(buy_log_address_params)
     if @buy_log_address.valid?
       pay_item
@@ -40,5 +41,9 @@ class BuyLogsController < ApplicationController
         card: params[:token],    
         currency: 'jpy'                 
       )
+  end
+
+  def find_item
+    @item = Item.find(params[:item_id])
   end
 end
