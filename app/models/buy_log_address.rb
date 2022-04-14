@@ -17,7 +17,7 @@ class BuyLogAddress
   end
   validates :postcode, presence: true, format: {with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)"}
   validates :phone_number, numericality: {only_integer: true, message: 'is invalid. Input only number'}
-  validates :phone_number, length: {minimum: 10, maximum: 11, message: 'is too short'}
+  validates :phone_number, length: {minimum: 10, maximum: 11, message: 'is invalid'}
 
   def save
     # 各テーブルにデータを保存する処理を書く

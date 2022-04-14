@@ -60,6 +60,16 @@ RSpec.describe BuyLogAddress, type: :model do
         @buy_log_address.valid?
         expect(@buy_log_address.errors.full_messages).to include ("Postcode is invalid. Include hyphen(-)")
       end
+      it 'phone_numberが12桁以上だと保存できないこと' do
+        @buy_log_address.phone_number = '123456789012'
+        @buy_log_address.valid?
+        expect(@buy_log_address.errors.full_messages).to include ("Phone number is invalid")
+      end
+      it 'phone_numberが9桁以下だと保存できないこと' do
+        @buy_log_address.phone_number = '123456789'
+        @buy_log_address.valid?
+        expect(@buy_log_address.errors.full_messages).to include ("Phone number is invalid")
+      end
       it 'userが紐付いていないと保存できないこと' do
         @buy_log_address.user_id = nil
         @buy_log_address.valid?
